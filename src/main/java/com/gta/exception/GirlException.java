@@ -10,18 +10,18 @@ import com.gta.enums.MessageEnum;
  */
 public class GirlException extends RuntimeException {
 
-    private String code;
+    private int code;
 
     public GirlException(MessageEnum messageEnum){
         super(messageEnum.getMsg());
         this.code = messageEnum.getCode();
     }
 
-    public String getCode() {
+    public int getCode() {
         return code;
     }
 
-    public void setCode(String code) {
+    public void setCode(int code) {
         this.code = code;
     }
 }
