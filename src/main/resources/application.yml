@@ -1,0 +1,29 @@
+spring:
+#  profiles:
+#    active: prod
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/dbgirl
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  output:
+    ansi:
+      enabled: detect #日志彩色输出
+server:
+  address: 10.10.21.31
+  port: 8080
+  context-path: /
+  session:
+    timeout: 30 #session过期时间
+#debug属性置为true的时候，核心Logger（包含嵌入式容器、hibernate、spring）会输出更多内容
+#但是应用的日志并不会输出为DEBUG级别
+debug: false
+logging:    #日志
+  level: error
+  file: error.log
+#  path: /var/log
+#  config: classpath:log4j-spring.properties
