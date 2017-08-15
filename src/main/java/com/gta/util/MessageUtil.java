@@ -25,4 +25,12 @@ public class MessageUtil {
         msg.setObj(null);
         return msg;
     }
+
+    public static Message exception(String msg){
+        Message message = new Message();
+        message.setCode(MessageEnum.FAIL.getCode());
+        message.setMsg(msg);
+        message.setObj(null);
+        return message;
+    }
 }

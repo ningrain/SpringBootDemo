@@ -1,5 +1,7 @@
 package com.gta.controller;
 
+import com.gta.enums.MessageEnum;
+import com.gta.exception.GirlException;
 import com.gta.model.Girl;
 import com.gta.util.Message;
 import com.gta.util.MessageUtil;
@@ -17,13 +19,15 @@ public class HelloController {
     public Message hello(@PathVariable("id") int id,
                          @PathVariable("cupSize") String cupSize,
                          @PathVariable("age") int age) {
-        if (age == 0){
-            return MessageUtil.exception();
+        if (age <= 0){
+            throw new GirlException(MessageEnum.MIN_AGE);
+        } else if (age > 120){
+            throw new GirlException(MessageEnum.MAX_AGE);
         }
         return MessageUtil.success(new Girl(id, cupSize, age));
     }
 
-    @GetMapping("/hi/{id}")
+    @PostMapping("/hi/{id}")
     public String hi(@PathVariable("id") int id) {
         return "id :" + id;
     }

@@ -6,14 +6,14 @@ package com.gta.util;
  * Date: 2017/8/14
  * Time: 16:58
  */
-public class Message {
+public class Message<T> {
 
     //代码
     private String code;
     //提示信息
     private String msg;
     //数据
-    private Object obj;
+    private T obj;
 
     public String getCode() {
         return code;
@@ -31,11 +31,11 @@ public class Message {
         this.msg = msg;
     }
 
-    public Object getObj() {
+    public T getObj() {
         return obj;
     }
 
-    public void setObj(Object obj) {
+    public void setObj(T obj) {
         this.obj = obj;
     }
 }
