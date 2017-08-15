@@ -9,17 +9,17 @@ package com.gta.util;
 public class Message<T> {
 
     //代码
-    private String code;
+    private int code;
     //提示信息
     private String msg;
     //数据
     private T obj;
 
-    public String getCode() {
+    public int getCode() {
         return code;
     }
 
-    public void setCode(String code) {
+    public void setCode(int code) {
         this.code = code;
     }
 

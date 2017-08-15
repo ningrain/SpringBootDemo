@@ -6,19 +6,21 @@ package com.gta.enums;
  */
 public enum MessageEnum {
 
-    SUCCESS("1", "成功"), FAIL("0", "失败");
+    SUCCESS(1, "成功"), FAIL(0, "系统错误"),
+    MIN_AGE(3, "年龄最小应该大于零"),
+    MAX_AGE(4, "年龄最大应该小于120岁");
 
     //代码
-    private String code;
+    private int code;
     //消息
     private String msg;
 
-    MessageEnum(String code, String msg) {
+    MessageEnum(int code, String msg) {
         this.code = code;
         this.msg = msg;
     }
 
-    public String getCode() {
+    public int getCode() {
         return code;
     }
 

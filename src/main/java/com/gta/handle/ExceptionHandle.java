@@ -27,8 +27,8 @@ public class ExceptionHandle {
             GirlException girlException = (GirlException) e;
             return MessageUtil.exception(girlException.getMessage());
         }else {
-            logger.error("系统错误 [{}]", e);
-            return MessageUtil.exception("系统错误");
+            logger.error("系统错误", e);
+            return MessageUtil.exception();
         }
     }
 

@@ -33,4 +33,12 @@ public class MessageUtil {
         message.setObj(null);
         return message;
     }
+
+    public static Message exception(int code, String msg){
+        Message message = new Message();
+        message.setCode(code);
+        message.setMsg(msg);
+        message.setObj(null);
+        return message;
+    }
 }
