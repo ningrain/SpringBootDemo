@@ -1,9 +1,9 @@
 package com.gta.service.Impl;
 
-import com.gta.enums.MessageEnum;
-import com.gta.exception.GirlException;
+import com.gta.dao.IGirlDao;
 import com.gta.model.Girl;
 import com.gta.service.GirlService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -14,14 +14,13 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class GirlServiceImpl implements GirlService {
+
+    @Autowired
+    private IGirlDao girlDao;
+
     @Override
     public Girl getGirlById(int id) {
-        Girl girl = new Girl(1, "E", 23);
-        if (girl.getAge() < 0){
-            throw new GirlException(MessageEnum.MIN_AGE);
-        } else if (girl.getAge() > 120) {
-            throw new GirlException(MessageEnum.MAX_AGE);
-        }
-        return null;
+        return girlDao.getGirlById(id);
     }
+
 }

@@ -6,10 +6,6 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/dbgirl
     username: root
     password: root
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: true
   output:
     ansi:
       enabled: detect #日志彩色输出
@@ -25,5 +21,7 @@ debug: false
 logging:    #日志
   level: error
   file: error.log
+#mybatis:
+#  mapper-locations: classpath:/mapper/*.xml
 #  path: /var/log
 #  config: classpath:log4j-spring.properties
