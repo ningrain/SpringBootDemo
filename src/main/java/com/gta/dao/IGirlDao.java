@@ -1,11 +1,8 @@
 package com.gta.dao;
 
 import com.gta.model.Girl;
-import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
 
 /**
  * IGirlDao
